@@ -1,0 +1,21 @@
+import { Component, Input } from '@angular/core';
+import { FormGroup, AbstractControl } from '@angular/forms';
+
+@Component({
+  selector: 'rma-input-text',
+  templateUrl: './input-text.component.html',
+  styleUrls: ['./input-text.component.scss']
+})
+export class InputTextComponent {
+
+  @Input() placeholder: string;
+  @Input() controlName: string;
+  @Input() formGroup: FormGroup;
+
+  constructor() { }
+
+  get formControl(): AbstractControl {
+    return this.formGroup.controls[this.controlName];
+  }
+
+}

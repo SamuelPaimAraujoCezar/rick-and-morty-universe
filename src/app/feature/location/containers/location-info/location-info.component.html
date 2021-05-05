@@ -1,0 +1,22 @@
+<rma-header text="Location Info" icon="info" [routeUrl]="router.url"></rma-header>
+
+<mat-list *ngIf="location; else noContent">
+    <mat-list-item>Name: {{ location.name }}</mat-list-item>
+    <mat-list-item>Type: {{ location.type }}</mat-list-item>
+    <mat-list-item>Dimension: {{ location.dimension }}</mat-list-item>
+    <mat-list-item *ngIf="(locationResidents$ | async)?.length; else noResidents">
+        Residents:
+    </mat-list-item>
+    <rma-character-mini-card-list *ngIf="(locationResidents$ | async)?.length"
+                                  [characters]="locationResidents$ | async" 
+                                  (openCharacterInfo)="openCharacterInfo($event)">
+    </rma-character-mini-card-list>
+</mat-list>
+
+<ng-template #noResidents>
+    <mat-list-item>Residents: Residents not found!</mat-list-item>
+</ng-template>
+
+<ng-template #noContent>
+    <h1 class="full-width main-div" style="color: white;">Location not found!</h1>
+</ng-template>

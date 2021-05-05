@@ -1,0 +1,22 @@
+<rma-header text="Episode Info" icon="info" [routeUrl]="router.url"></rma-header>
+
+<mat-list *ngIf="episode; else noContent">
+    <mat-list-item>Name: {{ episode.name }}</mat-list-item>
+    <mat-list-item>Air Date: {{ episode.air_date }}</mat-list-item>
+    <mat-list-item>Episode: {{ episode.episode }}</mat-list-item>
+    <mat-list-item *ngIf="(episodeCharacters$ | async)?.length; else noCharacters">
+        Characters:
+    </mat-list-item>
+    <rma-character-mini-card-list *ngIf="(episodeCharacters$ | async)?.length"
+                                  [characters]="episodeCharacters$ | async" 
+                                  (openCharacterInfo)="openCharacterInfo($event)">
+    </rma-character-mini-card-list>
+</mat-list>
+
+<ng-template #noCharacters>
+    <mat-list-item>Characters: Characters not found!</mat-list-item>
+</ng-template>
+
+<ng-template #noContent>
+    <h1 class="full-width main-div" style="color: white;">Episode not found!</h1>
+</ng-template>

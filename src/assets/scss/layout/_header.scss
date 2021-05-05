@@ -1,0 +1,20 @@
+.header-wrapper {
+    padding-top: 58px;
+
+    > .header {
+        background-color: black;
+    
+        > .title-group {
+    
+            > a {
+                display: flex;
+                align-items: center;
+                color: #7bfe48;
+    
+                > .icon {
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+}

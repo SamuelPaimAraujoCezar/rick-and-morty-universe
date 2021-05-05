@@ -1,0 +1,29 @@
+@import '../../../../../assets/scss/responsive/character-card';
+
+.filter {
+    width: calc(100% - 50px);
+}
+
+.home-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+.character-card {
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    > .character-description {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.mat-card-image {
+    margin: auto;
+    display: block;
+    margin-bottom: 5px;
+}

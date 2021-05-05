@@ -1,0 +1,19 @@
+.location-active {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.location-not-active {
+    color: white;
+}
+
+.mat-card-image {
+    width: 210px;
+    height: 210px;
+    margin-top: 5px;
+    margin-left: 15px;
+    border-radius: 20px;
+    display: block;
+}
+

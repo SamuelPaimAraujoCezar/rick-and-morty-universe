@@ -1,0 +1,18 @@
+<nav class="nav">
+    <div class="nav-wrapper">
+        <a class="home-page" [routerLink]="['']">
+            <img class="logo" src="../../../../assets/img/rick-and-morty-logo.png" alt="Rick and Morty Logo">
+        </a>
+        <div class="responsive-separator"></div>
+        <a class="home-link" 
+           [routerLink]="['']" 
+           routerLinkActive="link-active"
+           [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon class="home-icon">
+                home
+            </mat-icon>
+            <span class="title">Home</span>
+        </a>
+    </div>
+    <div class="separator"></div>
+</nav>

@@ -1,0 +1,18 @@
+@import '../../../../../assets/scss/responsive/episode-mini-card';
+
+.episode-mini-card-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+.episode-mini-card {
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    > .episode-mini-card-header {
+        margin-bottom: -20px;
+    }
+}

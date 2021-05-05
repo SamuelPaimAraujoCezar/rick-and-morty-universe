@@ -1,0 +1,19 @@
+@import '../../../../assets/scss/responsive/character-mini-card';
+
+.character-mini-card-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+.character-mini-card {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.mat-card-image {
+    margin: auto;
+    display: block;
+}

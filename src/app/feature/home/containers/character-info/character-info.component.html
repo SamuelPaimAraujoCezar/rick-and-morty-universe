@@ -1,0 +1,44 @@
+<rma-header text="Character Info" icon="info" [routeUrl]="router.url"></rma-header>
+
+<mat-list *ngIf="character; else noContent">
+    <mat-list-item>Name: {{ character.name }}</mat-list-item>
+    <mat-list-item>Status: {{ character.status }}</mat-list-item>
+    <mat-list-item>Gender: {{ character.gender }}</mat-list-item>
+    <mat-list-item>Species: {{ character.species }}</mat-list-item>
+    <mat-list-item *ngIf="character.type !== ''; else noType">
+        Type: {{ character.type }}
+    </mat-list-item>
+    <mat-list-item>
+        Origin: 
+        <a (click)="openLocationInfo(characterOrigin?.id)"
+           [ngClass]="character.origin.name !== 'unknown' ? 'location-active' : 'location-not-active'">
+            {{ character.origin.name }}
+        </a>
+    </mat-list-item>
+    <mat-list-item>Location:  
+        <a (click)="openLocationInfo(characterLocation?.id)"
+           [ngClass]="character.location.name !== 'unknown' ? 'location-active' : 'location-not-active'">
+            {{ character.location.name }}
+        </a>
+    </mat-list-item>
+    <img mat-card-image [src]="character.image" alt="Character Image">
+    <mat-list-item *ngIf="(characterEpisodes$ | async)?.length; else noEpisodes">
+        Episodes:
+    </mat-list-item>
+    <rma-episode-mini-card-list *ngIf="(characterEpisodes$ | async)?.length"
+                                [episodes]="characterEpisodes$ | async" 
+                                (openEpisodeInfo)="openEpisodeInfo($event)">
+    </rma-episode-mini-card-list>
+</mat-list>
+
+<ng-template #noType>
+    <mat-list-item>Type: undefined</mat-list-item>
+</ng-template>
+
+<ng-template #noEpisodes>
+    <mat-list-item>Episodes: Episodes not found!</mat-list-item>
+</ng-template>
+
+<ng-template #noContent>
+    <h1 class="full-width main-div" style="color: white;">Character not found!</h1>
+</ng-template>

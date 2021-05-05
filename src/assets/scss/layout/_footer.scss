@@ -1,0 +1,18 @@
+.footer {
+    background-color: #22a2bd;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > .description {
+        margin-right: 10px;
+        font-size: 20px;
+        color: #7bfe48;
+    }
+
+    > .social-media-icon {
+        margin-top: 4px;
+        margin-right: 10px;
+    }
+}

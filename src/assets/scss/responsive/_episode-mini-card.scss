@@ -1,0 +1,35 @@
+@media screen and (max-width: 400px) {
+    .episode-mini-card {
+        width: calc(100% - 20px);
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .episode-mini-card {
+        width: calc(50% - 52px);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .episode-mini-card {
+        width: calc(33.333% - 52px);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .episode-mini-card {
+        width: calc(25% - 52px);
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .episode-mini-card {
+        width: calc(20% - 52px);
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .episode-mini-card {
+        width: calc(16.666% - 52px);
+    }    
+}

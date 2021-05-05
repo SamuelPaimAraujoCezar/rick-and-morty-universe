@@ -1,0 +1,8 @@
+<div class="episode-mini-card-content">
+    <mat-card class="episode-mini-card" *ngFor="let episode of episodes" (click)="redirectToEpisode(episode.id)">
+       <mat-card-header class="episode-mini-card-header">
+           <mat-card-title>{{ episode.name }}</mat-card-title>
+           <mat-card-subtitle>{{ episode.episode }}</mat-card-subtitle>
+       </mat-card-header>
+   </mat-card>
+</div>
